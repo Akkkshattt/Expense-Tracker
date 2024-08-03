@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Expense_Tracker</title>
+    <title>Expense Tracker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @* <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/26.2.4/material.css" /> *@
     <link href="https://cdn.syncfusion.com/ej2/26.2.4/bootstrap5-dark.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/Expense_Tracker.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://cdn.syncfusion.com/ej2/26.2.4/dist/ej2.min.js"></script>
 </head>
 <body class="e-bigger">
@@ -38,6 +39,11 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <main role="main" class="pb-3">
+                    <div class="row">
+                        <div class="commonbtn" ">
+                            <a href="#" style="color:white;">Check</a>
+                        </div>
+                    </div>
                     @RenderBody()
                 </main>
             </div>

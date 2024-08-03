@@ -1,8 +1,6 @@
 ﻿@model Expense_Tracker.Models.Category
 
-@{
-    ViewData["Title"] = "Create";
-}
+
 
 <h1>Enter the details about your expenditure</h1>
 
@@ -13,7 +11,7 @@
         <div class="widget p-7">
             <form asp-action="AddorEdit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" name="CategotyId" value="@Model.CategoryId" />
+                <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
                 <div class="mb-3">
                     <div class='e-btn-group'>
                         <input type="radio" id="radioleft" name="Type" value="Expense" checked="@(Model.Type=="Expense")" />
@@ -33,7 +31,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Submit" class="btn btn-primary" />
                 </div>
             </form>
         </div>
