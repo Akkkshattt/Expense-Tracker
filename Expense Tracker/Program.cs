@@ -9,7 +9,9 @@ builder.Services.AddControllersWithViews();
 
 //Basically we are trying to connect to our Ef framerwork migration here using the models we have made
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnnection")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnnection"), sqlServerOptions => sqlServerOptions.CommandTimeout(300)));
+
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NCaF1cWWhBYVZpR2Nbe055flRGalhTVAciSV9jS3pTcUdqWXZfcHBXRGNbVQ==");
 
 var app = builder.Build();
 
@@ -26,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=DashBoard}/{action=Index}/{id?}");
 
 app.Run();

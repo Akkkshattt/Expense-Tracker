@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["isDashBoard"] = true;
+}
+
+<div class="row mb-4">
+    <div class="col-md-4">
+    <div class="d-flex flex-row widget summary income">
+        <div class="d-flex flex-column justify-content-center p-5">
+            <i class="fa-solid fa-dollar-sign fa-2xl"></i>
+        </div>
+        <div class="d-flex flex-column m-auto py-3">
+            <span class="lead">Total Income</span>
+            <h1 class="display-6 fw-bold">@ViewBag.TotalIncome</h1>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="d-flex flex-row widget summary expense">
+        <div class="d-flex flex-column justify-content-center p-5">
+            <i class="fa-solid fa-dollar-sign fa-2xl"></i>
+        </div>
+        <div class="d-flex flex-column m-auto py-3">
+            <span class="lead">Total Expense</span>
+            <h1 class="display-6 fw-bold">@ViewBag.TotalExpense</h1>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="d-flex flex-row widget summary balance">
+        <div class="d-flex flex-column justify-content-center p-5">
+            <i class="fa-solid fa-dollar-sign fa-2xl"></i>
+        </div>
+        <div class="d-flex flex-column m-auto py-3">
+            <span class="lead">Total Balance</span>
+            <h1 class="display-6 fw-bold">@ViewBag.Balance</h1>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+@* Adding Doughnut and spline chart from Syncfusion *@
+<div class="row mb-4">
+    <div class="col-md-5">
+        <div class="widget chart">
+            <div class="title p-4 text-center">
+                <h4>Expense by Category</h4>
+            </div>
+            <ejs-accumulationchart id="doughnutchart" enableSmartLabels>
+                <e-accumulation-series-collection>
+                    <e-accumulation-series dataSource="ViewBag.DoughNutChart" xName="categoryTitleWithIcon" yName="amount" innerRadius="60%" legendshape=Circle>
+                        <e-accumulationseries-datalabel name="formattedAmount" visible>
+
+                        </e-accumulationseries-datalabel>
+                    </e-accumulation-series>
+                </e-accumulation-series-collection>
+                <e-accumulationchart-legendsettings position="Top" toggleVisibility="false">
+                    <e-legendsettings-textstyle color="#fff">
+
+                    </e-legendsettings-textstyle>
+                </e-accumulationchart-legendsettings>
+                <e-accumulationchart-tooltipsettings enable></e-accumulationchart-tooltipsettings> 
+            </ejs-accumulationchart>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="widget chart">
+            <div class="title p-4 text-center">
+                <h4>Recent Transactions</h4>
+            </div>
+           <div class="px-4 pb-4">
+               <ejs-grid id="recent-transactions" dataSource="@ViewBag.RecentTransactions" gridLines="None">
+                   <e-grid-columns>
+                <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+                <e-grid-column headerText="Date" type="date" format="MMM-dd-yy" textAlign="Left" field="Date" width="110px"></e-grid-column>
+                <e-grid-column headerText="Amount" field="FormattedAmount" textAlign="Right" width="110px"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+           </div>
+        </div>
+    </div> 
+</div>

@@ -2,7 +2,13 @@
 
 
 
-<h1>List of Your Expenses</h1>
+@* <h1>List of Your Expenses</h1> *@
+
+@{
+    ViewData["PageTitle"] = "Categories";
+    ViewData["PageActionText"] = " + New Category ";
+    ViewData["PageActionUrl"] = "/Category/AddorEdit";
+}
 
 <div class="row">
     <div class="col-md-7 custom_grid1">
